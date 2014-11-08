@@ -1,8 +1,14 @@
-<p><a href="/posts/new">Add a Diary Entry</a></p>
-
 <div>
 	<% @posts.each do |post| %>
-	
-
-
+	<h2> <%= post.author.user_name %> says... </h2>
+	<a href="/posts/<%= post.id %>">
+	<img src="<%= post.image_url%>">
+	</a>
+	<br>
+	<p> <%= post.caption %> </p>
+	 <% post.tags.each do |tag| %>
+	 | <%= tag.name %> |
+	<% end %>
+	<br><br>
 </div>
+<% end %>

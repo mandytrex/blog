@@ -1,0 +1,31 @@
+header {
+	background-color: white;
+	padding-bottom: 30px;
+	border-radius: 10px;
+	margin: 0px;
+}
+
+body {
+	background-color: darkseagreen;
+	font-family: "courier new";
+	color: seashell;
+}
+
+img {
+	max-height:  200px;
+	max-width: 200px;
+}
+
+#head_link {
+	color: darkseagreen;
+
+
+}
+
+a:visited#head {
+color: darkseagreen;
+}
+
+a {
+	color: darkgreen;
+}

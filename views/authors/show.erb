@@ -1,0 +1,15 @@
+<div>
+	<h2><%= @author.user_name %></a><i> says... </i></h2>
+	<img src="<%= @author.image_url %>">
+	<br>
+	<%= @author.bio %> <br> <br>
+	<% @author.posts.each do |post| %>
+	<b><%= post.author.user_name %></b><br>
+	<%= post.created_at.strftime("%m/%e/%Y") %> <br>
+	<img src="<%= post.image_url %>"> <br>
+	<%= post.caption %> <br>
+	<% end %>
+</div>
+<br><br>
+
+

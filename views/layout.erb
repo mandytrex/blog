@@ -5,16 +5,18 @@
 	<link rel="stylesheet" href="/style.css">
 	<title>Dear Diary</title>
 </head>
-<center>
-<body>
-	<br>
+<center><header>
+		<br>
 		<h1><a href="/">Dear Diary...</a></h1>
-	<br>
 	<div id="nav">
-		<a href="/authors">Authors</a> |
-		<a href="/posts">Posts</a> |
-		<a href="/tags">Tags</a>
+		<a href="/authors" id="head_link">Authors</a> |
+		<a href="/posts/new" id="head_link">Add a Diary Entry</a> |
+		<a href="/tags" id="head_link">Tags</a> |
+
+		<br><br>
 	</div>
+</header>
+<body>
 	<br><br>
 		<%= yield %>
 

@@ -3,5 +3,7 @@
 # ===============
 
 get '/' do
-	erb :'home/home'
+	redirect '/posts'
 end
+
+

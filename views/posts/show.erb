@@ -1,0 +1,12 @@
+<div>
+	<h2><a href="/authors/<%= @post.author.id %>"> <%= @post.author.user_name %></a><i> says... </i></h2>
+	<img src="<%= @post.image_url%>"><br>
+	<%= @post.created_at.strftime("%m/%e/%Y") %><br>
+	<br>
+	<p><%= @post.caption %> </p>
+	<% @post.tags.each do |tag| %>
+	 | <%= tag.name %> |
+	<% end %>
+</div>
+<br><br>
+<a href="/posts/<%= @post.id %>/edit">Edit</a>

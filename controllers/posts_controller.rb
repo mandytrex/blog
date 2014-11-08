@@ -2,10 +2,14 @@
 # POSTS
 # ============
 
-# INDEX - ALL MICROPOSTS
 get '/posts' do
 	@posts = Post.all
-	erb :'posts/index'
+	erb :'/posts/index'
+end
+
+# NEW POST (form)
+get '/posts/new' do
+	erb :'/posts/new'
 end
 
 # SHOW SINGLE POST
@@ -14,10 +18,6 @@ get '/posts/:id' do
 	erb :'posts/show'
 end
 
-# NEW POST (form)
-get '/posts/new' do
-	erb :'/posts/new'
-end
 
 # CREATE A POST (form) (redirect)
 post '/posts' do

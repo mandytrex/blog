@@ -1,0 +1,13 @@
+
+<div>
+ <% @authors.each do |author| %>
+	<h2> <%= author.user_name %> </h2>
+	<a href="/authors/<%= author.id %>">
+	<img src="<%= author.image_url %>">
+	</a>
+	<br>
+	<p> <%= author.bio %> </p>
+	<br>
+</div>
+<% end %>
+
