@@ -1,14 +1,18 @@
 <div>
-  <h3><u> <%= @tag.name.upcase %></u></h3>
-
+  <h2><u> <%= @tag.name.upcase %></u></h2>
+<form action="/tags/<%= @tag.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<button>Delete This Tag?</button>
+</form><br>
    <% @tag.posts.each do |post| %>
    <b>
-   <%= post.author.user_name.capitalize%> says...</b><br><br>
+   <h3><%= post.author.user_name.capitalize%> says...</b></h3>
    <img src="<%= post.image_url %>"> <br>
    <%= post.created_at.strftime("%m/%e/%Y") %> <br>
-   <%= post.caption %>
-      <br><br>
+   <div class="caption">
+   <p class="caption"><%= post.caption %></p></div>
+      <br>
+<hr style="width:60%" />
 </div>
-<hr>
 <% end %>
 <br>

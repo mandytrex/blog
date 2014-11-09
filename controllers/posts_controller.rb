@@ -10,6 +10,7 @@ end
 # NEW POST (form)
 get '/posts/new' do
 	@authors = Author.all
+	@tags = Tag.all
 	erb :'/posts/new'
 end
 
@@ -24,8 +25,6 @@ post '/posts' do
 	post = Post.new(params[:post])
 	if post.save
 		redirect("/posts/#{post.id}")
-	else
-		redirect("/posts/new")
 	end
 end
 
@@ -38,17 +37,20 @@ end
 
 # UPDATE SELECTED POST (form) (redirect)
 put '/posts/:id' do
+	post = Post.find(params[:id])
 	if post.update(params[:post])
-		redirect('/posts/#{post.id}')
+		redirect("/posts/#{post.id}")
+	else
+		redirect("/posts/#{post.id}/edit")
 	end
 end
 
 # DESTROY SELECTED POSTS (form) (redirect)
 delete '/posts/:id' do
-	post = Post.find(param[:micropost])
+	post = Post.find(param[:post])
 	if post.destroy
-		redirect('/posts')
+		redirect("/posts")
 	else
-		redirect('/posts/#{post.id}')
+		redirect("/posts/#{post.id}")
 	end
 end

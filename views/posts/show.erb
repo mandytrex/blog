@@ -4,8 +4,8 @@
 	<%= @post.created_at.strftime("%m/%e/%Y") %><br>
 	<br>
 	<p><%= @post.caption %> </p>
-	<% @post.tags.each do |tag| %>
-	 | <%= tag.name %> |
+	 <% @post.tags.each do |tag| %>
+	 | <a href="/tags/<%= tag.id %>"><%= tag.name %></a> |
 	<% end %>
 </div>
 <br><br>

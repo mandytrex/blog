@@ -1,14 +1,15 @@
-
+<% @authors.each do |author| %>
 <div>
- <% @authors.each do |author| %>
 	<h2> <%= author.user_name %> </h2>
 	<a href="/authors/<%= author.id %>">
-	<img src="<%= author.image_url %>">
-	</a>
+	<img src="<%= author.image_url %>"></a>
 	<br>
-	<p> <%= author.bio %> </p>
-	<br>
-<% end %>
+	<div class="caption">
+	<p class="caption"> <%= author.bio %> </p>
 </div>
+	<br>
+<hr style="width:60%" />
+</div>
+<% end %>
 
 

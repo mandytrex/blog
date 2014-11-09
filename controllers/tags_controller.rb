@@ -2,10 +2,6 @@
 # TAGS
 # ==================
 
-# VIEWS Folder(routes): index.erb, show.erb, edit.erb
-# REDIRECTS: destroy (from edit)
-# Do I need a CREATE NEW TAG ROUTE? - I don't think so, but I'm not sure
-
 #INDEX - ALL TAGS
 get '/tags' do
 	@tags= Tag.all
@@ -26,4 +22,12 @@ end
 
 # DESTROY AUTHOR - (form) (redirect)
 delete '/tags/:id' do
+	tag = Tag.find
+end
+
+delete '/posts/:id' do
+	post = Post.find(param[:tag])
+	if tag.destroy
+		redirect("/tags")
+	end
 end

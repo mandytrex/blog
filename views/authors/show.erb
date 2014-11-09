@@ -1,15 +1,20 @@
 <div>
-	<h2><%= @author.user_name %></a><i> says... </i></h2>
+	<h2><%= @author.user_name.capitalize %></a></h2>
 	<img src="<%= @author.image_url %>">
 	<br>
-	<%= @author.bio %> <br> <br>
+	<%= @author.bio %> <br><br>
+	<a href="/authors/<%= @author.id %>/edit">Edit</a>
+	<br><br>
+		<hr style="width:60%" />
 	<% @author.posts.each do |post| %>
-	<b><%= post.author.user_name %></b><br>
-	<%= post.created_at.strftime("%m/%e/%Y") %> <br>
+	<p class="author_page">
+		On <%= post.created_at.strftime("%m/%e/%Y") %> <%= @author.user_name.capitalize %> said...<br><br></p>
 	<img src="<%= post.image_url %>"> <br>
-	<%= post.caption %> <br>
-	<% end %>
+	<div class="caption">
+	<p class="caption"><%= post.caption %></p> <br>
 </div>
-<br><br>
-
-
+<br>
+<hr style="width:60%" />
+</div>
+<br>
+	<% end %>

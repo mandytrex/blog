@@ -1,4 +1,6 @@
-<form action"/posts" method ="post">
+<br><br>
+<form action="/posts" method ="post">
+
 	<label for="user_name">User Name:<br>
 		<select name="post[author_id]">
 			<% @authors.each do |author| %>
@@ -6,13 +8,20 @@
 			<% end %>
 		</select>
 	</label><br>
+
 	<label for="image_url">Image URL:<br>
-		<input type="text" name="post[:image_url"> <br>
+		<input type="text" name="post[image_url]"> <br>
 	</label>
+
 	<label for="caption">Caption:<br>
-		<input type="text" name="post[:caption]"> <br>
-	</label>
-	<br>
+		<input type="text" name="post[caption]"> <br>
+	</label><br>
+
+	<label for="tag_name">Select a Tag:<br>
+		<% @tags.each do |tag| %>
+		<input type="checkbox" name="post.tags.id" value="<% tag.id %>"><%= tag.name %> <br> </input>
+			<% end %>
+	</label><br>
+
 	<input type="submit" value="Submit">
 </form>
-

@@ -32,4 +32,26 @@ a {
 
 a#head_text{
 	text-decoration: none;
+	font-size: 50px;
+}
+
+div#posts{
+	display: inline-block;
+	border: 3px solid white;
+	height: 400px;
+	width: 500px;
+}
+
+p.caption{
+	display:inline;
+}
+
+div.caption{
+	width: 380px;
+	font-size: 15px;
+}
+
+p.author_page{
+	font-weight: bold;
+	font-size: 16px;
 }

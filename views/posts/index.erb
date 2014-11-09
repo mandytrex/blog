@@ -1,15 +1,16 @@
+<% @posts.each do |post| %>
 <div>
-	<% @posts.each do |post| %>
-	<h2> <%= post.author.user_name %> says... </h2>
+	<h2><a href="/authors/<%= post.author.id %>"><%= post.author.user_name %></a> says... </h2>
 	<a href="/posts/<%= post.id %>">
 	<img src="<%= post.image_url%>"></a>
 	<br>
-	<p> <%= post.caption %> </p>
+	<div class="caption">
+	<p class="caption"> <%= post.caption %> </p>
+</div><br>
 	 <% post.tags.each do |tag| %>
 	 | <a href="/tags/<%= tag.id %>"><%= tag.name %></a> |
 	<% end %>
 	<br><br>
-	<hr>
-	<br>
+	<hr style="width:60%" />
 </div>
 <% end %>

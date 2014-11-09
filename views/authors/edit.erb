@@ -1,0 +1,22 @@
+<h3>Edit your profile</h3>
+<form action="/authors/<%= @author.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+
+	<label for="user_name">User Name:<br>
+		<input type="text" name="author[user_name]" value="<%= @author.user_name %>">
+	</label><br>
+
+	<label for="image_url">Image URL:<br>
+		<input type="text" name="author[image_url]" value="<%= @author.image_url %>">
+	</label><br>
+
+	<label for="bio">Bio:<br>
+		<input type="text" name="author[bio]" value="<%= @author.bio %>">
+	</label><br>
+	<input type="submit" name="submit">
+</form>
+<br>
+<form action="/authors/<%= @author.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<button>Delete</button>
+</form>
