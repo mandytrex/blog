@@ -9,6 +9,7 @@ end
 
 # NEW POST (form)
 get '/posts/new' do
+	@authors = Author.all
 	erb :'/posts/new'
 end
 
@@ -17,7 +18,6 @@ get '/posts/:id' do
 	@post = Post.find(params[:id])
 	erb :'posts/show'
 end
-
 
 # CREATE A POST (form) (redirect)
 post '/posts' do
@@ -32,13 +32,15 @@ end
 # EDIT POST (form) 
 get '/posts/:id/edit' do
 	@post = Post.find(params[:id])
+	@authors = Author.all
 	erb :'posts/edit'
 end
 
 # UPDATE SELECTED POST (form) (redirect)
 put '/posts/:id' do
-	post.update(params[:post])
+	if post.update(params[:post])
 		redirect('/posts/#{post.id}')
+	end
 end
 
 # DESTROY SELECTED POSTS (form) (redirect)

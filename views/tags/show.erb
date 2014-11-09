@@ -1,0 +1,14 @@
+<div>
+  <h3><u> <%= @tag.name.upcase %></u></h3>
+
+   <% @tag.posts.each do |post| %>
+   <b>
+   <%= post.author.user_name.capitalize%> says...</b><br><br>
+   <img src="<%= post.image_url %>"> <br>
+   <%= post.created_at.strftime("%m/%e/%Y") %> <br>
+   <%= post.caption %>
+      <br><br>
+</div>
+<hr>
+<% end %>
+<br>

@@ -2,13 +2,14 @@
 	<% @posts.each do |post| %>
 	<h2> <%= post.author.user_name %> says... </h2>
 	<a href="/posts/<%= post.id %>">
-	<img src="<%= post.image_url%>">
-	</a>
+	<img src="<%= post.image_url%>"></a>
 	<br>
 	<p> <%= post.caption %> </p>
 	 <% post.tags.each do |tag| %>
-	 | <%= tag.name %> |
+	 | <a href="/tags/<%= tag.id %>"><%= tag.name %></a> |
 	<% end %>
 	<br><br>
+	<hr>
+	<br>
 </div>
 <% end %>

@@ -1,0 +1,7 @@
+<div>
+<% @tags.each do |tag| %>
+	<h3>
+		<a href="/tags/<%= tag.id %>"><%= tag.name.capitalize %></a> <br>
+	</h3>
+<% end %>
+</div>

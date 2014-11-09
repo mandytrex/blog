@@ -29,3 +29,7 @@ color: darkseagreen;
 a {
 	color: darkgreen;
 }
+
+a#head_text{
+	text-decoration: none;
+}

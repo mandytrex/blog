@@ -1,5 +1,12 @@
-<form action"/authors" method ="post">
-	<label for ="user_name">User Name:<br>
-		<input type="text" name="author[username]"> <br>
+<form action="/authors" method="post">
+	<label for="user_name">User Name:<br>
+		<input type="text" name="author[name]"><br>
 	</label>
-	<label type="text" name=
+	<label for="image_url">Image URL:<br>
+		<input type="text" name="author[image_url]"><br>
+	</label>
+	<label for="bio">Bio<br>
+		<input type="text" name="author[bio]"><br>
+	</label>
+	<input type="submit" value="Submit">
+</form>

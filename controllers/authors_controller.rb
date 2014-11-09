@@ -12,13 +12,13 @@ get '/authors' do
   erb :'authors/index'
 end
 
+# NEW AUTHOR (form)
+get '/authors/new' do
+  erb :'/authors/new'
+end
+
 # SHOW SINGLE AUTHOR
 get '/authors/:id' do
   @author = Author.find(params[:id])
   erb :'authors/show'
-end
- 
-# NEW AUTHOR (form)
-get '/authors/new' do
-  erb :'/authors/new'
 end
