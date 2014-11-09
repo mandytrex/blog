@@ -2,10 +2,6 @@
 # AUTHORS
 # ==================
 
-# VIEWS Folder (routes): index.erb, show.erb, new.erb, edit.erb
-# REDIRECTS: create (from new), update (from edit), destroy (from edit)
-
-
 # INDEX - ALL AUTHORS
 get '/authors' do
 	@authors = Author.all
